@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GRAPHICA - Nos Moyens de Paiement</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 550px;
+      margin: auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.08);
+      padding: 30px;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      text-align: center;
+      color: #222;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #555;
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .payment {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 10px 15px;
+      border-radius: 12px;
+      background: #fafafa;
+      transition: all 0.3s ease;
+      border-left: 5px solid transparent;
+    }
+
+    .payment:hover {
+      transform: scale(1.02);
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .payment img {
+      width: 80px;
+      height: 80px;
+      margin-right: 15px;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+    }
+
+    .details {
+      line-height: 1.4;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #222;
+    }
+
+    .owner {
+      font-style: italic;
+      color: #555;
+      font-size: 0.9em;
+    }
+
+    .copy-section {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .copy-btn {
+      background: #e0e0e0;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 10px;
+      cursor: pointer;
+      font-size: 0.9em;
+      color: #333;
+      display: flex;
+      align-items: center;
+      transition: background 0.2s;
+    }
+
+    .copy-btn:hover {
+      background: #ccc;
+    }
+
+    .copy-btn.copied::after {
+      content: '✅ Copié !';
+      color: green;
+      font-size: 0.85em;
+      margin-left: 10px;
+    }
+
+    .m-pesa { border-left-color: #5dbb63; }
+    .airtel { border-left-color: #e91e63; }
+    .orange { border-left-color: #ff9800; }
+    .equity { border-left-color: #830000; }
+
+    .note {
+      margin-top: 30px;
+      font-size: 0.9em;
+      text-align: center;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>GRAPHICA</h1>
+    <h2>Nos moyens de paiement</h2>
+
+    <!-- Airtel -->
+    <div class="payment airtel">
+      <div class="info">
+        <img src="image/Airtel_Africa_logo.svg" alt="Airtel">
+        <div class="details">
+          <div class="label">Airtel Money</div>
+          <div id="airtel">097 929 0202</div>
+          <div class="owner">au nom de Muhindo Pilipili</div>
+        </div>
+      </div>
+      <div class="copy-section">
+        <button class="copy-btn" onclick="copyText('airtel', this)">📋 Copier</button>
+      </div>
+    </div>
+
+    <!-- M-PESA -->
+    <div class="payment m-pesa">
+      <div class="info">
+        <img src="image/m_pessa.png" alt="M-PESA">
+        <div class="details">
+          <div class="label">M-PESA</div>
+          <div id="mpesa">082 726 4515</div>
+          <div class="owner">au nom de Esther</div>
+        </div>
+      </div>
+      <div class="copy-section">
+        <button class="copy-btn" onclick="copyText('mpesa', this)">📋 Copier</button>
+      </div>
+    </div>
+
+    <!-- Orange -->
+    <div class="payment orange">
+      <div class="info">
+        <img src="image/Orange-Money-logo.jpg" alt="Orange">
+        <div class="details">
+          <div class="label">Orange Money</div>
+          <div id="orange">085 294 3255</div>
+          <div class="owner">au nom de Muhindo Pilipili</div>
+        </div>
+      </div>
+      <div class="copy-section">
+        <button class="copy-btn" onclick="copyText('orange', this)">📋 Copier</button>
+      </div>
+    </div>
+
+    <!-- Equity USD -->
+    <div class="payment equity">
+      <div class="info">
+        <img src="image/equitybcdc-logo-vector.png" alt="Equity USD">
+        <div class="details">
+          <div class="label">Equity BCDC (USD)</div>
+          <div id="equity-usd">688100052057924</div>
+          <div class="owner">au nom de Muhindo Pilipili</div>
+        </div>
+      </div>
+      <div class="copy-section">
+        <button class="copy-btn" onclick="copyText('equity-usd', this)">📋 Copier</button>
+      </div>
+    </div>
+
+    <!-- Equity CDF -->
+    <div class="payment equity">
+      <div class="info">
+        <img src="image/equitybcdc-logo-vector.png" alt="Equity CDF">
+        <div class="details">
+          <div class="label">Equity BCDC (CDF)</div>
+          <div id="equity-cdf">688100051456330</div>
+          <div class="owner">au nom de Muhindo Pilipili</div>
+        </div>
+      </div>
+      <div class="copy-section">
+        <button class="copy-btn" onclick="copyText('equity-cdf', this)">📋 Copier</button>
+      </div>
+    </div>
+
+    <div class="note">
+      Merci de bien vérifier le numéro avant d’effectuer un paiement.
+    </div>
+  </div>
+
+  <script>
+    function copyText(id, btn) {
+      const text = document.getElementById(id).innerText.replace(/\s/g, '');
+      navigator.clipboard.writeText(text).then(() => {
+        btn.classList.add("copied");
+        setTimeout(() => btn.classList.remove("copied"), 2000);
+      });
+    }
+  </script>
+</body>
+</html>
